@@ -75,4 +75,10 @@ https://github.com/wahyu9kdl/application/blob/main/LICENSE
 
 
 <iframe src="https://github.com/sponsors/wahyu9kdl/button" title="Sponsor wahyu9kdl" height="35" width="116" style="border: 0;"></iframe>
-<iframe src="https://github.com/sponsors/wahyu9kdl/card" title="Sponsor wahyu9kdl" height="225" width="600" style="border: 0;"></iframe>
+
+<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+<input type="hidden" name="cmd" value="_s-xclick">
+<input type="hidden" name="hosted_button_id" value="82DLHDSRV7J68">
+<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+<img alt="" border="0" src="https://www.paypalobjects.com/id_ID/i/scr/pixel.gif" width="1" height="1">
+</form>
