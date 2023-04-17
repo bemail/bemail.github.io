@@ -180,7 +180,45 @@ By choosing the right keywords, of course the chance for your content to be know
 Digital marketing has indeed become one of the effective marketing media carried out by business people or business actors. There are many types of digital marketing that can be chosen and adjusted to the target market and type of business.
 
 </p>
+<center>
+<button class="enableEthereumButton btn" style="appearance: button; background-color: #ea357a; border-color: rgb(234, 53, 122); border-radius: 0.8rem; border-style: solid; border-width: 1px; box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 8px; color: white; cursor: pointer; font-family: inherit; font-size: 1rem; font-weight: 400; line-height: 1.5; margin-bottom: 0.5rem !important; margin-left: 0px; margin-right: 0.5rem !important; margin-top: 0px; margin: 0px 0.5rem 0.5rem 0px; padding: 0.26rem 1rem; transition: color 0.15s ease-in-out 0s, background-color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s">Enable Ethereum [ETH]</button>
+<button class="sendEthButton btn" style="appearance: button; background-color: #ea357a; border-color: rgb(234, 53, 122); border-radius: 0.8rem; border-style: solid; border-width: 1px; box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 8px; color: white; cursor: pointer; font-family: inherit; font-size: 1rem; font-weight: 400; line-height: 1.5; margin-bottom: 0.5rem !important; margin-left: 0px; margin-right: 0.5rem !important; margin-top: 0px; margin: 0px 0.5rem 0.5rem 0px; padding: 0.26rem 1rem; transition: color 0.15s ease-in-out 0s, background-color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s ">Send Ethereum [ETH]</button>
+<button onclick="location.href='https://donate.depay.com/1saRh7aWcEtczdJ6gMlOXg '" type="button" style="appearance: button; background-color: #ea357a; border-color: rgb(234, 53, 122); border-radius: 0.8rem; border-style: solid; border-width: 1px; box-shadow: rgba(0, 0, 0, 0.08) 0px 0px 8px; color: white; cursor: pointer; font-family: inherit; font-size: 1rem; font-weight: 400; line-height: 1.5; margin-bottom: 0.5rem !important; margin-left: 0px; margin-right: 0.5rem !important; margin-top: 0px; margin: 0px 0.5rem 0.5rem 0px; padding: 0.26rem 1rem; transition: color 0.15s ease-in-out 0s, background-color 0.15s ease-in-out 0s, border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s">
+         Donation Bitcoin [BTC]</button>
+</center>         
+<script>
+const ethereumButton = document.querySelector('.enableEthereumButton');
+const sendEthButton = document.querySelector('.sendEthButton');
 
+let accounts = [];
+
+//Sending Ethereum to an address
+sendEthButton.addEventListener('click', () => {
+  ethereum
+    .request({
+      method: 'eth_sendTransaction',
+      params: [
+        {
+          from: accounts[0],
+          to: '0xFDd2b5bA05C21B1fD387F53ffC001acA512d6877',
+          value: '0x29a2241af62c0000',
+          gasPrice: '0x09184e72a000',
+          gas: '0x2710',
+        },
+      ],
+    })
+    .then((txHash) => console.log(txHash))
+    .catch((error) => console.error(error));
+});
+
+ethereumButton.addEventListener('click', () => {
+  getAccount();
+});
+
+async function getAccount() {
+  accounts = await ethereum.request({ method: 'eth_requestAccounts' });
+}
+</script>
 <style type='text/css' scoped="">
 #table-outer{padding:7px 10px;margin:0 auto}
 #table-outer table{width:auto;margin:0 auto;border:none!important;}
